@@ -1,39 +1,43 @@
 <!DOCTYPE HTML>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <title>Vis & Society — Assignment 2 (EDA)</title>
 
-  <!-- Official course CSS -->
-  <link rel="stylesheet" href="https://vis-society.github.io/assignments/report.css" />
+  <!-- Official course stylesheet -->
+  <link rel="stylesheet"
+        href="https://vis-society.github.io/assignments/report.css" />
 
-  <!-- Custom size control -->
+  <!-- Custom adjustments -->
   <style>
 
-    /* Make figures smaller and centered */
-    figure {
-      max-width: 700px;
-      margin: 30px auto;
+    /* Reduce overall content width slightly for better readability */
+    main {
+      max-width: 900px;
+      margin: auto;
     }
 
+    /* Figure formatting */
+    figure {
+      margin: 40px auto;
+      max-width: 900px;
+    }
+
+    /* Make images large but not overwhelming */
     figure img {
       width: 100%;
       height: auto;
-      border-radius: 4px;
+      display: block;
+      margin: auto;
+      border-radius: 6px;
     }
 
-    /* For paired figures side-by-side */
-    .two-column {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-      max-width: 900px;
-      margin: 30px auto;
-    }
-
-    .two-column figure {
-      margin: 0;
-      max-width: 100%;
+    /* Caption styling */
+    figcaption {
+      margin-top: 12px;
+      font-size: 0.95em;
+      line-height: 1.5em;
     }
 
   </style>
@@ -45,14 +49,15 @@
 
 <header>
 
-<h1>
-  <small>Assignment 2</small>
-  Exploratory Data Analysis
-</h1>
+  <h1>
+    <small>Assignment 2</small>
+    Exploratory Data Analysis
+  </h1>
 
-<p>
-  <strong>Christian Lopez Angeles</strong> — <em>chris_la@mit.edu</em>
-</p>
+  <p>
+    <strong>Christian Lopez Angeles</strong> —
+    <em>chris_la@mit.edu</em>
+  </p>
 
 </header>
 
@@ -65,7 +70,12 @@
 <h2>Subtheme: Speculation</h2>
 
 <p>
-This report explores speculation-related housing dynamics in Boston using neighborhood-level trends in corporate ownership and owner occupancy (2004–2024), and connecting them to housing structure signals (vacancy rate and housing units per capita) and demographic composition (2024).
+
+This report explores speculation-related housing dynamics in Boston by using
+neighborhood-level trends in corporate ownership and owner occupancy (2004–2024),
+and connecting them to housing structure signals (vacancy and housing units per capita)
+and demographic composition (2024).
+
 </p>
 
 
@@ -74,18 +84,37 @@ This report explores speculation-related housing dynamics in Boston using neighb
 <ol>
 
 <li>
-<strong>How have corporate ownership and owner occupancy changed over time across Boston neighborhoods (2004–2024)?</strong>
-Which neighborhoods diverge most from the citywide trend, and when do major increases occur?
+
+<strong>
+How have corporate ownership and owner occupancy changed over time across Boston neighborhoods (2004–2024)?
+</strong>
+
+Which neighborhoods diverge most from the citywide trend?
+
 </li>
 
-<li>
-<strong>Which neighborhoods look like “hotspots” of speculative dynamics?</strong>
-Specifically, which neighborhoods combine high corporate ownership levels in 2024 with large increases since 2004, and how do these relate to vacancy and housing supply per capita?
-</li>
 
 <li>
-<strong>How does demographic composition correlate with corporate ownership in 2024?</strong>
-Are there visible structural patterns linking ownership with racial/ethnic composition, housing structure, and college housing presence?
+
+<strong>
+Which neighborhoods look like “hotspots” of speculative dynamics?
+</strong>
+
+(High corporate ownership levels in 2024 and large increases since 2004),
+and how do these relate to vacancy and housing units per capita?
+
+</li>
+
+
+<li>
+
+<strong>
+How does demographic composition correlate with corporate ownership in 2024?
+</strong>
+
+Are there visible patterns linking ownership structure with race/ethnicity shares
+and college housing presence?
+
 </li>
 
 </ol>
@@ -99,16 +128,22 @@ Are there visible structural patterns linking ownership with racial/ethnic compo
 <h2>Discoveries & Insights</h2>
 
 
-<!-- FIGURE 1 -->
+<!-- Figure 1 -->
+
 <figure>
 
-<img src="img1.png" alt="Corporate ownership — selected years" />
+<img src="img1.png"
+     alt="Corporate ownership top neighborhoods selected years">
 
 <figcaption>
 
-<strong>Figure 1 — Corporate ownership levels at selected milestones (2010–2024).</strong>
+<strong>Figure 1 — Corporate ownership over time (selected years, top neighborhoods).</strong>
 
-This chart provides an initial overview of corporate ownership evolution in the most affected neighborhoods. Even at early milestones such as 2010 and 2015, several neighborhoods already exhibited elevated ownership rates, suggesting that recent increases are part of longer-running structural trends rather than sudden shocks. The consistent upward shifts across nearly all neighborhoods indicate broad systemic growth rather than isolated local anomalies.
+This visualization provides a snapshot of corporate ownership levels across key
+neighborhoods at selected time points. It reveals that neighborhoods with high ownership
+levels in 2024 were already above average earlier, suggesting persistence rather than
+sudden emergence. The upward shift across multiple neighborhoods indicates systemic
+growth rather than isolated local anomalies.
 
 </figcaption>
 
@@ -116,16 +151,22 @@ This chart provides an initial overview of corporate ownership evolution in the 
 
 
 
-<!-- FIGURE 2 -->
+<!-- Figure 2 -->
+
 <figure>
 
-<img src="img2.png" alt="Corporate ownership heatmap over time" />
+<img src="img2.png"
+     alt="Corporate ownership heatmap by neighborhood and year">
 
 <figcaption>
 
 <strong>Figure 2 — Corporate ownership evolution across neighborhoods (2004–2024 heatmap).</strong>
 
-The heatmap reveals both temporal and spatial heterogeneity. While nearly all neighborhoods show gradual increases, some areas—such as South Boston Waterfront, Fenway, and Longwood—experience accelerated growth after approximately 2018. This suggests a possible regime shift or intensification phase in ownership patterns during the late 2010s, potentially aligned with broader financial or housing market changes.
+The heatmap reveals both temporal and spatial heterogeneity in ownership patterns.
+Nearly all neighborhoods show gradual increases, but some areas such as South Boston
+Waterfront, Fenway, and Longwood experience accelerated growth after approximately 2018.
+This suggests a possible regime shift or intensification phase aligned with broader
+housing market or financial trends.
 
 </figcaption>
 
@@ -133,52 +174,22 @@ The heatmap reveals both temporal and spatial heterogeneity. While nearly all ne
 
 
 
-<!-- FIGURE 3 -->
-<div class="two-column">
+<!-- Figure 3 -->
 
 <figure>
 
-<img src="img3.png" alt="Distribution of corporate ownership and owner occupancy" />
+<img src="img3.png"
+     alt="Distribution and Boston average trends">
 
 <figcaption>
 
 <strong>Figure 3 — Distribution and citywide trends.</strong>
 
-Corporate ownership shows a right-skewed distribution, with most neighborhood-year observations clustered at lower values but with a growing high-ownership tail. This indicates increasing inequality across neighborhoods rather than uniform growth.
-
-</figcaption>
-
-</figure>
-
-
-<figure>
-
-<img src="img4.png" alt="Corporate ownership change vs current level" />
-
-<figcaption>
-
-<strong>Figure 4 — Current level vs long-term increase.</strong>
-
-This quadrant visualization identifies clear “hotspots” where ownership is both high and rapidly increasing. These areas represent the strongest candidates for speculation-driven housing dynamics.
-
-</figcaption>
-
-</figure>
-
-</div>
-
-
-
-<!-- FIGURE 5 -->
-<figure>
-
-<img src="img5.png" alt="Demographic composition sorted by corporate ownership" />
-
-<figcaption>
-
-<strong>Figure 5 — Demographic composition relative to corporate ownership (2024).</strong>
-
-Sorting neighborhoods by corporate ownership reveals systematic demographic differences across the ownership spectrum. While not causal, these structural associations suggest that ownership concentration may intersect with broader neighborhood demographic and socioeconomic patterns.
+Corporate ownership displays a right-skewed distribution, with most neighborhood-year
+observations clustered at lower values but with an expanding high-ownership tail.
+This suggests growing inequality across neighborhoods rather than uniform increases.
+Citywide averages confirm a steady rise in corporate ownership accompanied by declining
+owner occupancy.
 
 </figcaption>
 
@@ -186,16 +197,21 @@ Sorting neighborhoods by corporate ownership reveals systematic demographic diff
 
 
 
-<!-- FIGURE 6 -->
+<!-- Figure 4 -->
+
 <figure>
 
-<img src="img6.png" alt="Correlation heatmap" />
+<img src="img4.png"
+     alt="Corporate ownership current level vs change">
 
 <figcaption>
 
-<strong>Figure 6 — Structural correlations between ownership, housing supply, and demographics.</strong>
+<strong>Figure 4 — Corporate ownership current level vs long-term increase.</strong>
 
-The correlation matrix highlights strong negative association between corporate ownership and owner occupancy, confirming that increased institutional ownership corresponds to reduced resident ownership. Relationships with housing supply indicators further suggest structural housing market mechanisms underlying ownership shifts.
+This quadrant analysis identifies distinct neighborhood categories. High-level and
+rapid-growth areas emerge as speculative “hotspots,” while others show stability or
+emerging trends. This classification helps prioritize areas for deeper structural
+and demographic analysis.
 
 </figcaption>
 
@@ -203,16 +219,64 @@ The correlation matrix highlights strong negative association between corporate 
 
 
 
-<!-- FIGURE 7 -->
+<!-- Figure 5 -->
+
 <figure>
 
-<img src="img7.png" alt="Housing structure signals" />
+<img src="img5.png"
+     alt="Demographic composition sorted by ownership rate">
 
 <figcaption>
 
-<strong>Figure 7 — Vacancy and housing units per capita (2024).</strong>
+<strong>Figure 5 — Demographic composition relative to corporate ownership rate (2024).</strong>
 
-Neighborhoods with high vacancy and high housing units per capita may indicate areas where housing is held as investment rather than primary residence. These structural signals provide additional supporting context when interpreting ownership concentration patterns.
+Sorting neighborhoods by corporate ownership reveals variation in demographic composition
+across the ownership spectrum. This visualization supports descriptive comparisons and
+raises questions about structural housing dynamics and socioeconomic differences across
+neighborhoods.
+
+</figcaption>
+
+</figure>
+
+
+
+<!-- Figure 6 -->
+
+<figure>
+
+<img src="img6.png"
+     alt="Correlation heatmap ownership housing demographics">
+
+<figcaption>
+
+<strong>Figure 6 — Correlation heatmap of ownership, housing structure, and demographics (2024).</strong>
+
+The correlation matrix summarizes relationships between ownership structure,
+housing characteristics, and demographic variables. Strong negative relationships
+between corporate ownership and owner occupancy reinforce the interpretation that
+corporate investment contributes to structural ownership shifts.
+
+</figcaption>
+
+</figure>
+
+
+
+<!-- Figure 7 -->
+
+<figure>
+
+<img src="img7.png"
+     alt="Vacancy and housing units per capita">
+
+<figcaption>
+
+<strong>Figure 7 — Housing structure indicators: vacancy and housing units per capita (2024).</strong>
+
+These structural indicators provide context for speculative dynamics. Neighborhoods
+with high vacancy and high housing units per capita may reflect investment-driven
+ownership patterns rather than purely residential demand.
 
 </figcaption>
 
@@ -229,9 +293,15 @@ Neighborhoods with high vacancy and high housing units per capita may indicate a
 
 <p>
 
-Between 2004 and 2024, corporate ownership increased substantially across Boston neighborhoods, with accelerated growth after approximately 2018. This increase is unevenly distributed, with specific neighborhoods emerging as ownership “hotspots” characterized by both high levels and rapid change.
+Between 2004 and 2024, corporate ownership increased substantially across Boston,
+while owner occupancy declined. This trend was not uniform: certain neighborhoods
+emerged as clear speculative hotspots characterized by both high ownership levels
+and rapid growth.
 
-These patterns coincide with structural housing signals such as higher vacancy rates and lower owner occupancy, suggesting broader shifts in housing function from residential use toward investment or institutional ownership. Demographic and structural differences further contextualize these ownership patterns, indicating that corporate ownership growth is embedded within broader spatial and socioeconomic housing dynamics.
+Structural housing indicators and demographic composition provide additional context,
+helping identify neighborhoods where speculative investment patterns may be most
+visible. These findings motivate deeper investigation into underlying drivers and
+policy implications.
 
 </p>
 
